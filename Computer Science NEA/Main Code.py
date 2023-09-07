@@ -40,7 +40,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                print("
+                print("cool")
         if event.type == pygame.QUIT:
             run = False
         
