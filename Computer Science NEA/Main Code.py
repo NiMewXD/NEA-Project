@@ -33,14 +33,12 @@ run = True
 while run:
     draw_bg()
     
-    start_button.draw(screen)
+    if start_button.draw(screen):
+        print("Start")
     if exit_button.draw(screen):
         run = False 
             
     for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                print("cool")
         if event.type == pygame.QUIT:
             run = False
         
