@@ -21,32 +21,39 @@ def draw_bg():
     screen.blit(scaled_bg, (0,0))
 
 #buttons
-start_img = pygame.image.load("Start_btn.png").convert_alpha()
-exit_img = pygame.image.load("Exit_btn.png").convert_alpha()
+start_img = pygame.image.load("Start_Button.png").convert_alpha()
+exit_img = pygame.image.load("Exit_Button.png").convert_alpha()
     
-start_button = button.Button(400, 50, start_img, 0.6)
-exit_button = button.Button(465,300, exit_img, 0.6)
+start_button = button.Button(screen_width/2, 300, start_img, 1.5)
+exit_button = button.Button(1150,460, exit_img, 0.6)
 
-
+def start_game():
 #game loop
-run = True
-while run:
-    draw_bg()
+    run = True
+    while run:
+        draw_bg()
     
-    if start_button.draw(screen):
-        print("Start")
-    if exit_button.draw(screen):
-        run = False 
+        if start_button.draw(screen):
+            main_game()
+        if exit_button.draw(screen):
+            run = False 
             
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
         
-        pygame.display.update()
+            pygame.display.update()
     
    
             
-pygame.quit()
+    pygame.quit()
+
+def main_game():
+    draw_bg()
+
+
+start_game()
+
 
 
 
